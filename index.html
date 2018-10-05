@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://static1.squarespace.com/static/54591051e4b0c3b48356aeb4/t/59b0080ee4fcb505709d1065/favicon.ico">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
+
+    <title>My contacts</title>
+
+</head>
+
+<body>
+    <div class="row" id="body-row">
+        <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+            <ul class="list-group">
+                <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class=" list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-address-book fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Contact</span>
+                        <span class="submenu-icon ml-auto"></span>
+                    </div>
+                </a>
+                <div id='submenu1' class="collapse sidebar-submenu">
+                    <a href="#" class="list-group-item list-group-item-action  text-white">
+                        <span class="menu-collapsed">Item 1</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action  text-white">
+                        <span class="menu-collapsed">Item 2</span>
+                    </a>
+                </div>
+                <a href="#" class=" list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-sign-out fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Logout</span>
+                    </div>
+                </a>
+            </ul>
+        </div>
+        <div class="col container">
+            <h1><span> <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        alt="Generic placeholder image" width="140" height="140"></span>CMQ Test</h1>
+            <div>
+                <h1>Contacts</h1>
+
+                <button type="button" class="btn btn-primary btn-link create-btn" data-toggle="modal" data-target="#newContactModal">New
+                    contact</button>
+            </div>
+            <main>
+                <h2>Contacts</h2>
+                <p>
+                    You can search and filter contacts by name, contact information, and groups.
+                </p>
+                <div class="input-group">
+                    <input id="contact-filter" type="text" class="form-control" aria-label="Text input with dropdown button"
+                        placeholder="Enter a contact's name">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Group selection</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">A</a>
+                            <a class="dropdown-item" href="#">B</a>
+                            <a class="dropdown-item" href="#">C</a>
+                        </div>
+                    </div>
+                </div>
+                <table id="contact-table" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="contact-list"></tbody>
+                </table>
+                <div>
+                    <button type="button" class="btn btn-light">Cancel</button>
+                    <button type="button" class="btn btn-primary save-btn">Save</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal New Contact -->
+    <div class="modal fade" id="newContactModal" tabindex="-1" role="dialog" aria-labelledby="newContactModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newContactModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="contact-form" action="#">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="contact-name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="contact-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone" class="col-form-label">Phone:</label>
+                            <input type="text" class="form-control" id="contact-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email" class="col-form-label">Email:</label>
+                            <input type="email" class="form-control" id="contact-email" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <button type="submit" class="btn btn-primary">Confirmer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

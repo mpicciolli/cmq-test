@@ -1,0 +1,54 @@
+.img-circle {
+  border-radius: 50%;
+  margin-right: 50px;
+}
+
+.btn{
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-icon {
+  background-color: transparent;
+}
+
+.create-btn {
+  float: right;
+}
+
+.action-btn button {
+  margin: 5px;
+}
+
+.save-btn {
+  background-color: #0c1930;
+  border-color: #0c1930;
+}
+
+.table th {
+  text-align: center;
+}
+
+.table tr td input[type="text"] {
+  display: none;
+}
+
+.table tr.editMode td input[type="text"] {
+  display: block;
+}
+
+.table tr.editMode td label {
+  display: none;
+}
+
+.table tr td button i.fa-save {
+  display: none;
+}
+
+.table tr.editMode td button i.fa-save {
+  display: block;
+}
+
+tr.editMode td button i.fa-pencil {
+  display: none;
+}
